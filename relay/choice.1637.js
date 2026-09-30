@@ -57,7 +57,7 @@ module.exports.main=function main(pageTextEncoded){
 	output+="<polygon points='"+(multiplier*data.pos.x+(multiplier*0.5))+","+(multiplier*data.pos.y+(multiplier*0.25))+" "+(multiplier*data.pos.x+(multiplier*0.75))+","+(multiplier*data.pos.y+(multiplier*0.75))+" "+(multiplier*data.pos.x+(multiplier*0.25))+","+(multiplier*data.pos.y+(multiplier*0.75))+"' style='fill:lime' transform='rotate("+(data.pos.f*(multiplier*0.9))+","+(multiplier*data.pos.x+(multiplier*0.5))+","+(multiplier*data.pos.y+(multiplier*0.5))+")'/>";
 	
 	const PLAQUE_OFFSETS=[[(multiplier*0.5),multiplier],[0,(multiplier*0.5)],[(multiplier*0.5),0],[multiplier,(multiplier*0.5)]];
-	output+="<style>.plaque{fill:red;font:"+(multiplier*0.6)+"px bolder;font-family:monospace;stroke:black;stroke-width:3px;paint-order:stroke}</style>";
+	output+="<style>.plaque{fill:#FF7F7F;font:"+(multiplier*0.6)+"px bolder;font-family:monospace;stroke:black;stroke-width:3px;paint-order:stroke}</style>";
 	if(kol.getProperty("vr1637_printPlaques")=="true"){
 		kol.print("\"plaques\": "+JSON.stringify(data.plaques));
 	}
@@ -92,7 +92,7 @@ module.exports.main=function main(pageTextEncoded){
 			canvas.getContext("2d").drawImage(img, 0, 0);
 
 			var link = document.createElement("a");
-			link.download = "map.png";
+			link.download = "rose_garden_map.png";
 			link.href = canvas.toDataURL("image/png");
 			link.click();
 		};
